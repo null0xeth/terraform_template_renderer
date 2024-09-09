@@ -1,5 +1,0 @@
-sudo tee /etc/hosts <<EOF
-%{ for name, ipv4 in dirty_map ~}
-${ipv4} ${name} ${name}.vault.internal
-%{ endfor ~}
-EOF

@@ -26,8 +26,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_node_id"></a> [node\_id](#input\_node\_id) | n/a | `string` | `null` | no |
-| <a name="input_templates"></a> [templates](#input\_templates) | n/a | `any` | n/a | yes |
+| <a name="input_node_id"></a> [node\_id](#input\_node\_id) | Systematically assigned, unique ID | `string` | `null` | no |
+| <a name="input_templates"></a> [templates](#input\_templates) | Map of Template objects that we will be populating and rendering | <pre>map(object({<br>    template_source   = optional(string)<br>    local_destination = optional(string)<br>    base_file         = optional(string)<br>    with_node_id      = optional(bool)<br>    variables         = optional(object({}))<br>  }))</pre> | `{}` | no |
 
 ## Outputs
 
