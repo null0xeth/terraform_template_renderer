@@ -3,8 +3,10 @@
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.64.0 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | 2.5.1 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | 3.2.2 |
+| <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | >=0.62.0 |
 
 ## Providers
 
@@ -26,8 +28,10 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_node_id"></a> [node\_id](#input\_node\_id) | Systematically assigned, unique ID | `string` | `null` | no |
-| <a name="input_templates"></a> [templates](#input\_templates) | Map of Template objects that we will be populating and rendering | <pre>map(object({<br>    template_source   = optional(string)<br>    local_destination = optional(string)<br>    base_file         = optional(string)<br>    with_node_id      = optional(bool)<br>    variables         = optional(object({}))<br>  }))</pre> | `{}` | no |
+| <a name="input_node_id"></a> [node\_id](#input\_node\_id) | Systematically assigned, unique ID | `string` | `"none"` | no |
+| <a name="input_provider_aws"></a> [provider\_aws](#input\_provider\_aws) | hashicorp/aws provider configuration variables | <pre>object({<br>    region = optional(string)<br>  })</pre> | `{}` | no |
+| <a name="input_provider_proxmox"></a> [provider\_proxmox](#input\_provider\_proxmox) | bpg/proxmox provider configuration variables | <pre>object({<br>    endpoint          = optional(string)<br>    username          = optional(string)<br>    agent_socket      = optional(string)<br>    node              = optional(string)<br>    default_datastore = optional(string)<br>  })</pre> | `{}` | no |
+| <a name="input_templates"></a> [templates](#input\_templates) | n/a | `any` | n/a | yes |
 
 ## Outputs
 
